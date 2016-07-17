@@ -34,6 +34,7 @@
     "envalid": "^2.2.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-google-maps": "^4.11.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "react-sparklines": "^1.6.0",
