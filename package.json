@@ -30,10 +30,14 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "axios": "^0.13.1",
+    "envalid": "^2.2.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
-    "redux": "^3.5.2"
+    "react-sparklines": "^1.6.0",
+    "redux": "^3.5.2",
+    "redux-promise": "^0.5.3"
   }
 }

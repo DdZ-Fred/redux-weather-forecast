@@ -1,4 +1,7 @@
 import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions';
 
 const propTypes = {
 
@@ -16,6 +19,7 @@ class SearchBar extends Component {
 
     // Handlers bindings
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onInputChange(e) {
@@ -26,6 +30,8 @@ class SearchBar extends Component {
 
   onFormSubmit(e) {
     e.preventDefault();
+    this.props.fetchWeather(this.state.term);
+    this.setState({ term: '' });
   }
 
   render() {
@@ -56,4 +62,16 @@ class SearchBar extends Component {
 }
 SearchBar.PropTypes = PropTypes;
 
-export default SearchBar;
+function mapStateToProps(state) {
+  return {
+
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  // Turns an object whose values are action creators, into an object with
+  // the same keys but with every action creators wrapped into a dispatch
+  return bindActionCreators({ fetchWeather }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
